@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Categiras</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <nav>
+        <div>
+            <ul><li><a href="../index.html">inicion</a></li></ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregar-producto-modal">
+            Agregar
+        </button>
+
+        <h1>Lista de categorias</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="productos-table-body">
+            </tbody>
+        </table>
+    </div>
+
+    <!-- HTML del formulario para agregar un nuevo producto -->
+    <div id="agregar-producto-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="agregar-producto-form">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Agregar nueva categoria</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST">
+
+                            <div class="form-group">
+                                <label for="name_producto">Nombre de la categoria:</label>
+                                <input type="text" class="form-control" id="name_producto" name="name_producto" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description_producto">Descripción:</label>
+                                <textarea class="form-control" id="description_producto" name="description_producto" required></textarea>
+                            </div>
+
+                            <button class="btn btn-primary" onclick="registrarProducto()">Registrar categoria</button>
+                        </form>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="categorias.js"></script>
+</body>
+
+</html>
